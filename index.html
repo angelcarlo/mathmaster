@@ -26,16 +26,7 @@
 	
 	
 	
-	function login(){
-		var pw = window.localStorage.getItem("password");
-var a = "";
-if(pw==a){
-$("#regpicture").show();
-}
-else{
-$("#regpicture").hide();
-$("#regpicture").slideUp();
-}
+function login(){
 
 	var u = window.localStorage.getItem("username");
 	var p = window.localStorage.getItem("password");
@@ -230,8 +221,13 @@ $("#regpicture").slideUp();
 </tr>
 </table>
 <a href="#mathmaster" target="_blank" ><img src="images/play.png"  id="play" height="20%" width="75%"></a> <br />
+<<<<<<< HEAD
 <a href="#register" target="_blank" ><img src="images/setting.png"  height="20%" width="75%"></a><br />
 <a href="index.html" target="_blank" ><img src="images/logout.png"    height="20%" width="75%"></a><br />
+=======
+<a href="#register" target="_blank" ><img src="images/account.png"  height="15%" width="20%"></a><br />
+<a href="index.html" target="_blank" ><img src="images/logout.png"    height="15%" width="20%"></a><br />
+>>>>>>> origin/master
 
 
 
@@ -869,15 +865,7 @@ window.localStorage.setItem("totalScore", totalLocal);
 function load()
 {
 
-var pw = window.localStorage.getItem("password");
-var a = "";
-if(pw==a){
-$("#regpicture").show();
-}
-else{
-$("#regpicture").hide();
-$("#regpicture").slideUp();
-}
+
 
 
 var useuse =  document.getElementById('nameuser').innerHTML = window.localStorage.getItem("name");
