@@ -29,4 +29,10 @@
         <preference name="fullscreen" value="true" />
         <preference name="target-device" value="universal" />
 
+		
+		  <ProgressBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@android:style/Widget.ProgressBar.Small"
+         android:layout_marginRight="5dp" />
 </widget>
