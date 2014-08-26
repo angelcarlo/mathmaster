@@ -229,9 +229,9 @@ $("#regpicture").slideUp();
 </td>
 </tr>
 </table>
-<a href="#mathmaster" target="_blank" ><img src="images/play.png"  id="play" height="15%" width="75%"></a> <br />
-<a href="#register" target="_blank" ><img src="images/setting.png"  height="15%" width="75%"></a><br />
-<a href="index.html" target="_blank" ><img src="images/logout.png"    height="15%" width="75%"></a><br />
+<a href="#mathmaster" target="_blank" ><img src="images/play.png"  id="play" height="20%" width="75%"></a> <br />
+<a href="#register" target="_blank" ><img src="images/setting.png"  height="20%" width="75%"></a><br />
+<a href="index.html" target="_blank" ><img src="images/logout.png"    height="20%" width="75%"></a><br />
 
 
 
@@ -247,8 +247,19 @@ $("#regpicture").slideUp();
 
 <div data-role="page" id="mathmaster" class="content" style= "background: #000f39;">
  <div data-role="header" data-theme="a" align="center" data-position="fixed" style="height:10%;">
-<h1 class= "auto-style12" id="headscore">Score:</h1> 
-<h2 id="points" class="point" value="100" > </h2>
+
+<table id="tblscore">
+<tr>
+<td>
+<h2 class= "auto-style12" id="headscore">Score:</h2> 
+</td>
+<td>
+<h2 id="points" class="point" value="100"> </h2>
+</td>
+</tr>		
+</table>
+ 
+ 
  </div>
 <progress id="myProgress" value="0" max="100" ></progress><br>
 <div data-role="content" align="center"  style="width=90% height=90% ">
@@ -271,14 +282,17 @@ $("#regpicture").slideUp();
 		<img src="images/FACT.gif"  onClick="factClick()" width="50%" height="10%" id="fact" class="fact" alt="" />
 </td>
 		</tr>
-		<table>		
+</table>
 		</form>
 		</td>
 		</tr>
+	
+
+		
 </table>
 <form  >
 			<div id="infoscore">
-			<label>Hi<label>
+			<label>GAME OVER!<label>
 			<input type="text" id="namenameuser" name="username"	 align="center"		style="text-transform: uppercase;"  disabled ></input>
 			<br />
 			<input  type="text" id="addressuser" name="address"  align="center"	  style="text-transform: uppercase;  align: center;"  disabled ></input>
@@ -422,17 +436,24 @@ if (questnum==10)
 	var current = progress.attr("value");
 	current = 0;
 	
-	if(ans=="b2"){score=score+1; progress.attr("value", current);}
-	else if(ans=="c2"){score=score+1; progress.attr("value", current);}
-	else if(ans=="b2"){score=score+1; progress.attr("value", current);}
-	else if(ans=="c3"){score=score+1; progress.attr("value", current);}
-	else if(ans=="c4"){score=score+1; progress.attr("value", current);}
-	else if(ans=="c16"){score=score+1; progress.attr("value", current);}
-	else if(ans=="a20"){score=score+1; progress.attr("value", current);}
-	else if(ans=="c20"){score=score+1; progress.attr("value", current);}
-	else if(ans=="b21"){score=score+1; progress.attr("value", current);}
-	else if(ans=="b3"){score=score+1; progress.attr("value", current);}
-
+	if(ans=="ee101"){score=score+1; progress.attr("value", current);}
+	else if(ans=="bb2"){score=score+1; progress.attr("value", current);}
+	else if(ans=="a101"){score=score+1; progress.attr("value", current);}
+	else if(ans=="b101"){score=score+1; progress.attr("value", current);}
+	else if(ans=="ee3"){score=score+1; progress.attr("value", current);}
+	else if(ans=="a102"){score=score+1; progress.attr("value", current);}
+	else if(ans=="c102"){score=score+1; progress.attr("value", current);}
+	else if(ans=="e102"){score=score+1; progress.attr("value", current);}
+	else if(ans=="a103"){score=score+1; progress.attr("value", current);}
+	else if(ans=="e103"){score=score+1; progress.attr("value", current);}
+	else if(ans=="b104"){score=score+1; progress.attr("value", current);}
+	else if(ans=="e104"){score=score+1; progress.attr("value", current);}
+	else if(ans=="a105"){score=score+1; progress.attr("value", current);}
+	else if(ans=="c105"){score=score+1; progress.attr("value", current);}	
+	else if(ans=="a106"){score=score+1; progress.attr("value", current);}
+	else if(ans=="c106"){score=score+1; progress.attr("value", current);}	
+	else if(ans=="b107"){score=score+1; progress.attr("value", current);}
+	else if(ans=="e107"){score=score+1; progress.attr("value", current);}		
 	else{
 	var mySave = parseInt(document.getElementById ("sc").innerHTML = score);
 		window.localStorage.setItem("bluffactScore", mySave);
@@ -474,101 +495,128 @@ window.localStorage.setItem("totalScore", totalLocal);
 	
 	if(questnum==1)
 	{
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 
 
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = " I came, I saw, I conquered.” Is one of the famous lines of Julius Caesar. ?";
-    	document.getElementById ("bluff").value = "a2";
-		document.getElementById ("fact").value = "aa2";
+    	document.getElementById ("ask").innerHTML = "4/2*9=17?";
+    	document.getElementById ("bluff").value = "a102";
+		document.getElementById ("fact").value = "aa102";
 
     	questnum=2;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = "The fastest growing nail is on the ring finger?";
-    	document.getElementById ("bluff").value = "b2";
-		document.getElementById ("fact").value = "bb2";
+    	document.getElementById ("ask").innerHTML = "9*4/2=6?";
+    	document.getElementById ("bluff").value = "b102";
+		document.getElementById ("fact").value = "bb102";
 
     	questnum=2;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = " The original name for butterfly was peanutfly?";
-    	document.getElementById ("bluff").value = "c2";
-		document.getElementById ("fact").value = "cc2";
+    	document.getElementById ("ask").innerHTML = "2*4*9=74?";
+    	document.getElementById ("bluff").value = "c102";
+		document.getElementById ("fact").value = "cc102";
     	questnum=2;
 		}
+		
+			else if (tobecondition[randomNum]=='q3')
+    	{
+    	document.getElementById ("ask").innerHTML = "9*4/2=6.5?";
+    	document.getElementById ("bluff").value = "e102";
+		document.getElementById ("fact").value = "ee102";
+    	questnum=2;
+		}
+		
 		}
 		<!-- next 3 question here-->
 		else if(questnum==2)
 	{
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 
 
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = " Grapes EXPLODE when you put them in the microwave! ?";
-    	document.getElementById ("bluff").value = "a4";
-		document.getElementById ("fact").value = "aa4";
+    	document.getElementById ("ask").innerHTML = "8*4/2=16?";
+    	document.getElementById ("bluff").value = "a104";
+		document.getElementById ("fact").value = "aa104";
     	questnum=3;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = " If you eat too many carrots you turn ORANGE?";
-    	document.getElementById ("bluff").value = "b4";
-		document.getElementById ("fact").value = "bb4";
+    	document.getElementById ("ask").innerHTML = "2*4/8=2?";
+    	document.getElementById ("bluff").value = "b104";
+		document.getElementById ("fact").value = "bb104";
     	questnum=3;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = "The Earth is approximately 1kg?";
-    	document.getElementById ("bluff").value = "c4";
-		document.getElementById ("fact").value = "cc4";
+    	document.getElementById ("ask").innerHTML = "2*4*8=64?";
+    	document.getElementById ("bluff").value = "c104";
+		document.getElementById ("fact").value = "cc104";
     	questnum=3;
 		}
+		
+				else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "8/4*2=6?";
+    	document.getElementById ("bluff").value = "e104";
+		document.getElementById ("fact").value = "ee104";
+    	questnum=3;
+		}
+		
 		}
 		
 				<!-- next 3 question here-->
 			else if(questnum==3)
 	{
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 
 
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = " Cryovolcano is a volcano that shoots out ICE rather than lava. ?";
-    	document.getElementById ("bluff").value = "a21";
-		document.getElementById ("fact").value = "aa21";
+    	document.getElementById ("ask").innerHTML = "5*4-6=16?";
+    	document.getElementById ("bluff").value = "a106";
+		document.getElementById ("fact").value = "aa106";
     	questnum=3;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = "The Mona Lisa has eyebrows. It was the fashion in Renaissance Florence to shave them off.?";
-    	document.getElementById ("bluff").value = "b21";
-		document.getElementById ("fact").value = "bb21";
+    	document.getElementById ("ask").innerHTML = "6*5-4=26?";
+    	document.getElementById ("bluff").value = "b106";
+		document.getElementById ("fact").value = "bb106";
     	questnum=3;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = "Pineberries are exists. ?";
-    	document.getElementById ("bluff").value = "c21";
-		document.getElementById ("fact").value = "cc21";
+    	document.getElementById ("ask").innerHTML = "5-4*6=12?";
+    	document.getElementById ("bluff").value = "c106";
+		document.getElementById ("fact").value = "cc106";
     	questnum=3;
 		}
+		
+				else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "5-4*6=12?";
+    	document.getElementById ("bluff").value = "e106";
+		document.getElementById ("fact").value = "ee106";
+    	questnum=3;
+		}
+		
 		}
 		
 		
@@ -601,20 +649,19 @@ if (questnum==10)
 	
 	
 	if(ans=="aa1"){score=score+1;  progress.attr("value", current);}
-	else if(ans=="aa2"){score=score+1; progress.attr("value", current);}
-		else if(ans=="aa3"){score=score+1; progress.attr("value", current);}
-		else if(ans=="aa4"){score=score+1; progress.attr("value", current);}
-		else if(ans=="bb4"){score=score+1; progress.attr("value", current);}
-		else if(ans=="aa17"){score=score+1; progress.attr("value", current);}
-		else if(ans=="bb17"){score=score+1; progress.attr("value", current);}
-			else if(ans=="bb20"){score=score+1; progress.attr("value", current);}
-				else if(ans=="aa21"){score=score+1; progress.attr("value", current);}
-			else if(ans=="cc21"){score=score+1; progress.attr("value", current);}
-
-
-
-
-
+	else if(ans=="cc3"){score=score+1; progress.attr("value", current);}
+	else if(ans=="cc101"){score=score+1; progress.attr("value", current);}
+	else if(ans=="bb102"){score=score+1; progress.attr("value", current);}
+	else if(ans=="bb103"){score=score+1; progress.attr("value", current);}
+	else if(ans=="cc103"){score=score+1; progress.attr("value", current);}
+	else if(ans=="aa104"){score=score+1; progress.attr("value", current);}
+	else if(ans=="cc104"){score=score+1; progress.attr("value", current);}
+	else if(ans=="bb105"){score=score+1; progress.attr("value", current);}
+	else if(ans=="c105"){score=score+1; progress.attr("value", current);}
+	else if(ans=="ee106"){score=score+1; progress.attr("value", current);}
+	else if(ans=="bb106"){score=score+1; progress.attr("value", current);}
+	else if(ans=="aa107"){score=score+1; progress.attr("value", current);}
+	else if(ans=="cc107"){score=score+1; progress.attr("value", current);}
 	else{
 	var mySave = parseInt(document.getElementById ("sc").innerHTML = score);
 		window.localStorage.setItem("bluffactScore", mySave);
@@ -652,99 +699,167 @@ window.localStorage.setItem("totalScore", totalLocal);
 	}
 	document.getElementById ("points").innerHTML = score ;
 	
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 	
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = " Jupiter it is the heaviest planet in the Solar System. ?";
-    	document.getElementById ("bluff").value = "a3";
-		document.getElementById ("fact").value = "aa3";
+    	document.getElementById ("ask").innerHTML = "21+6+3=33?";
+    	document.getElementById ("bluff").value = "a101";
+		document.getElementById ("fact").value = "aa101";
 
     	questnum=2;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = " Bulls are not color blind?";
-    	document.getElementById ("bluff").value = "b3";
-		document.getElementById ("fact").value = "bb3";
+    	document.getElementById ("ask").innerHTML = "2-0+2=3?";
+    	document.getElementById ("bluff").value = "b101";
+		document.getElementById ("fact").value = "bb101";
 
     	questnum=2;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = " Humanbirds are the only animals able to fly backwards?";
-    	document.getElementById ("bluff").value = "c3";
-		document.getElementById ("fact").value = "cc3";
+    	document.getElementById ("ask").innerHTML = "2+2-2=2?";
+    	document.getElementById ("bluff").value = "c101";
+		document.getElementById ("fact").value = "cc101";
+    	questnum=2;
+		}
+				else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "2+2*0=4?";
+    	document.getElementById ("bluff").value = "ee101";
+		document.getElementById ("fact").value = "e101";
     	questnum=2;
 		}
 		
+		
 				else if(questnum==2)
 	{
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 
 
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = " Pineberries are exists. ?";
-    	document.getElementById ("bluff").value = "a16";
-		document.getElementById ("fact").value = "aa17";
+    	document.getElementById ("ask").innerHTML = "9/3+9=11??";
+    	document.getElementById ("bluff").value = "a103";
+		document.getElementById ("fact").value = "aa103";
     	questnum=3;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = "Only female bees work.?";
-    	document.getElementById ("bluff").value = "b16";
-		document.getElementById ("fact").value = "bb17";
+    	document.getElementById ("ask").innerHTML = "9/9+3=4?";
+    	document.getElementById ("bluff").value = "b103";
+		document.getElementById ("fact").value = "bb103";
     	questnum=3;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = " Blueberries are blue! ?";
-    	document.getElementById ("bluff").value = "c16";
-		document.getElementById ("fact").value = "cc17";
+    	document.getElementById ("ask").innerHTML = "9+9+3=21?";
+    	document.getElementById ("bluff").value = "c103";
+		document.getElementById ("fact").value = "cc103";
+    	questnum=3;
+		}
+		
+		
+			else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "9+9+3=21?";
+    	document.getElementById ("bluff").value = "e103";
+		document.getElementById ("fact").value = "ee103";
     	questnum=3;
 		}
 		}
 		
 						else if(questnum==3)
 	{
-	var tobecondition =['q1','q2','q3'];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
     $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
     
 
 
 		if (tobecondition[randomNum]=='q1')
     	{
-    	document.getElementById ("ask").innerHTML = "Tennis was originally played with bare mouth. ?";
-    	document.getElementById ("bluff").value = "a20";
-		document.getElementById ("fact").value = "aa20";
+    	document.getElementById ("ask").innerHTML = "9+6+4=17?";
+    	document.getElementById ("bluff").value = "a105";
+		document.getElementById ("fact").value = "aa105";
     	questnum=3;
     	}
     	else if (tobecondition[randomNum]=='q2')
     	{
-    	document.getElementById ("ask").innerHTML = "The Sahara Desert is the world's largest desert where years can go by without any rain.?";
-    	document.getElementById ("bluff").value = "b20";
-		document.getElementById ("fact").value = "bb20";
+    	document.getElementById ("ask").innerHTML = "6-4+9=11?";
+    	document.getElementById ("bluff").value = "b105";
+		document.getElementById ("fact").value = "bb105";
     	questnum=3;
 		}
 		
 		else if (tobecondition[randomNum]=='q3')
     	{
-    	document.getElementById ("ask").innerHTML = "Only male bees work. ?";
-    	document.getElementById ("bluff").value = "c20";
-		document.getElementById ("fact").value = "cc20";
+    	document.getElementById ("ask").innerHTML = "9-6+4=9?";
+    	document.getElementById ("bluff").value = "c105";
+		document.getElementById ("fact").value = "cc105";
+    	questnum=3;
+		}
+		
+			else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "6-3*2=6?";
+    	document.getElementById ("bluff").value = "e105";
+		document.getElementById ("fact").value = "ee105";
     	questnum=3;
 		}
 		}
+		
+		
+		
+							else if(questnum==4)
+	{
+	var tobecondition =['q1','q2','q3','q4'];
+	var randomNum=Math.floor((Math.random()*4)+0);
+    $(tobecondition[randomNum]).fadeIn(2500).delay(2000).fadeOut(2000);
+    
+
+
+		if (tobecondition[randomNum]=='q1')
+    	{
+    	document.getElementById ("ask").innerHTML = "9+2*8=88?";
+    	document.getElementById ("bluff").value = "a107";
+		document.getElementById ("fact").value = "aa107";
+    	questnum=3;
+    	}
+    	else if (tobecondition[randomNum]=='q2')
+    	{
+    	document.getElementById ("ask").innerHTML = "9+2+8=19?";
+    	document.getElementById ("bluff").value = "b107";
+		document.getElementById ("fact").value = "bb107";
+    	questnum=3;
+		}
+		
+		else if (tobecondition[randomNum]=='q3')
+    	{
+    	document.getElementById ("ask").innerHTML = "8*9+2=74?";
+    	document.getElementById ("bluff").value = "c107";
+		document.getElementById ("fact").value = "cc107";
+    	questnum=3;
+		}
+		
+			else if (tobecondition[randomNum]=='q4')
+    	{
+    	document.getElementById ("ask").innerHTML = "9-2+8=19?";
+    	document.getElementById ("bluff").value = "e107";
+		document.getElementById ("fact").value = "ee107";
+    	questnum=3;
+		}
+		}
+		
 		
 }
 
@@ -783,12 +898,12 @@ document.getElementById('sc1').innerHTML = window.localStorage.getItem("bluffact
 	document.getElementById ('playagain').hidden = true;
 		document.getElementById ('backtomenu').hidden = true;
 	
-	var tobecondition =["q1","q2","q3"];
-	var randomNum=Math.floor((Math.random()*3)+0);
+	var tobecondition =["q1","q2","q3","q4"];
+	var randomNum=Math.floor((Math.random()*4)+0);
 
     	if (tobecondition[randomNum]=='q1')
     	{
-	document.getElementById ("ask").innerHTML = " The scientific name of gorilla is “gorilla gorilla gorilla.?";
+	document.getElementById ("ask").innerHTML = "5-2*4=12?";
 		document.getElementById ("bluff").value = "a1";
 		document.getElementById ("fact").value = "aa1";
     	
@@ -796,9 +911,9 @@ document.getElementById('sc1').innerHTML = window.localStorage.getItem("bluffact
     	else if (tobecondition[randomNum]=='q2')
     	{
 
-			document.getElementById ("bluff").value = "b2";
-			document.getElementById ("fact").value = "bb2";
-    	document.getElementById ("ask").innerHTML = "  Mark Zuckerberg invented Twitter?";
+			document.getElementById ("bluff").value = "bb2";
+			document.getElementById ("fact").value = "b2";
+    	document.getElementById ("ask").innerHTML = "4*5-2=17?";
     	}
 		
 		else if (tobecondition[randomNum]=='q3')
@@ -806,7 +921,15 @@ document.getElementById('sc1').innerHTML = window.localStorage.getItem("bluffact
 
 			document.getElementById ("bluff").value = "c3";
 			document.getElementById ("fact").value = "cc3";
-    	document.getElementById ("ask").innerHTML = "With great power comes great responsibility. Is famous line of Superman?";
+    	document.getElementById ("ask").innerHTML = "4-2*5=10?";
+    	}
+		
+			else if (tobecondition[randomNum]=='q4')
+    	{
+
+			document.getElementById ("bluff").value = "ee3";
+			document.getElementById ("fact").value = "e3";
+    	document.getElementById ("ask").innerHTML = "4-2*5=11?";
     	}
  
 }
@@ -840,7 +963,8 @@ function updateBar() {
 	$('#bluff').fadeOut(300);
 	$('#fact').fadeOut(300);
 	$('#ask').fadeOut(300);
-	
+	$('#tblscore').fadeOut(300);
+		
 	$('#playagain').fadeIn(300);
 	$('#backtomenu').fadeIn(300);
 	$('#sharebtn').fadeIn(300);
