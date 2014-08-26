@@ -214,13 +214,11 @@ $("#regpicture").slideUp();
 <div data-role="content" align="center" >
  <div > 
  <label class="hello">Hi</label> 
- <label id="nameuser" style="text-transform: uppercase"  > </label>
+ <label id="nameuser" style="text-transform: uppercase"> </label>
  
  </div> 
 <label class="hello">Enjoy the game!  and Share now your score to everyone</label>
-<br />
-<br />
-<br />
+
 <table>
 <tr>
 <td>
@@ -231,17 +229,11 @@ $("#regpicture").slideUp();
 </td>
 </tr>
 </table>
-<a href="#mathmaster" target="_blank" ><img src="images/play.png"  id="play" height="25%" width="80%"></a> <br />
+<a href="#mathmaster" target="_blank" ><img src="images/play.png"  id="play" height="15%" width="75%"></a> <br />
+<a href="#register" target="_blank" ><img src="images/setting.png"  height="15%" width="75%"></a><br />
+<a href="index.html" target="_blank" ><img src="images/logout.png"    height="15%" width="75%"></a><br />
 
-<table align="center" style= "background: #000f39;">
-<tr>
-<td align="center" style= "background: #0af2e4;">
-<a href="index.html" target="_blank" ><img src="images/logout.png"   height="10%" width="30%"></a><br />
-</td>
-<td  align="center" style= "background: #0af2ae;"  >
-<a href="#register" target="_blank" ><img src="images/setting.png"height="10%" width="30%"></a><br />
-</td>
-</table>
+
 
 
 
@@ -304,10 +296,10 @@ $("#regpicture").slideUp();
 			<table  align="center">
 			<tr>
 			<td  align="center">
-			<a href ="#successfully" >	<img src="" alt=""  id="backtomenu"  onClick="bactomenu()" class="auto-style3" width="40%" height="10%"  /></a>
+			<a href ="#successfully" >	<img src="" alt=""  id="backtomenu"  onClick="bactomenu()" class="auto-style3" width="25%" height="8%"  /></a>
 			</td>
 			<td  align="center">
-			<a href="#mathmaster" >	<img src="" alt=""  id="playagain" onClick="refresh()" class="auto-style3" width="60%" height="15%"   /></a>
+			<a href="#mathmaster" >	<img src="" alt=""  id="playagain" onClick="refresh()" class="auto-style3" width="35%" height="10%"   /></a>
 			</td>
 			</tr>
 			</table>
@@ -337,14 +329,14 @@ $("#regpicture").slideUp();
 .auto-style1 {
 	text-align: center;
 	font-family: "Century Gothic";
-	font-size: 150%;
+	font-size: 100%;
 	color: white;
 }
 
 
 .auto-style12 {
 	font-family: "Century Gothic";
-	font-size: 150%;
+	font-size: 100%;
 	color: white;
 
 
@@ -762,7 +754,15 @@ window.localStorage.setItem("totalScore", totalLocal);
 function load()
 {
 
-
+var pw = window.localStorage.getItem("password");
+var a = "";
+if(pw==a){
+$("#regpicture").show();
+}
+else{
+$("#regpicture").hide();
+$("#regpicture").slideUp();
+}
 
 
 var useuse =  document.getElementById('nameuser').innerHTML = window.localStorage.getItem("name");
