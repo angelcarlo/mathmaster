@@ -27,7 +27,7 @@
 	
 	
 	function login(){
-		var pw = window.localStorage.getItem("password");
+var pw = window.localStorage.getItem("password");
 var a = "";
 if(pw==a){
 $("#regpicture").show();
@@ -42,7 +42,7 @@ $("#regpicture").slideUp();
 	var user = document.getElementById('logusername').value; 
 	var pass = document.getElementById('logpassword').value;
 	
-	if(u==user){
+	if(u==user && p==pass){
 		window.open('index.html#successfully');
 	}
 	else{
@@ -155,8 +155,8 @@ $("#regpicture").slideUp();
 
  <img src="images/masthmaster.png" height="40%" width="70%" />
 
-<a href="#login" target="_blank" ><img src="images/START.png"   height="30%" width="80%"></a></br>	
-<a href="#register" target="_blank" ><img src="images/HELP.png" id="regpicture"   height="30%" width="80%" ></a></br>
+<a href="#login" target="_blank" ><img src="images/START.png"   height="30%" width="80%"></a>
+<a href="#register" target="_blank" ><img src="images/HELP.png" id="regpicture"   height="30%" width="80%" ></a>
 </div>
 </div>
 
@@ -194,14 +194,15 @@ $("#regpicture").slideUp();
    <img src="images/header.png" height="100%" width="80%" />
  </div>
 <div data-role="content"  >
-<form>
+<form   >
 <label class="userstyle" >USERNAME:</label>
 <input type = "text" name = "username" id="logusername" maxlength = "30" style="text-transform: uppercase"   required />
 <label class="passwordstyle">PASSWORD:</label>
 <input type = "password" name = "password" id="logpassword" maxlength = "30"  style="text-transform: uppercase"   required />
-<a  target="_blank" ><img src="images/ok.png"   onClick="login()"  height="30%" width="100%" ></a>
-<a  href="#mainpage"  target="_blank" ><img src="images/cancel.png"  height="30%" width="100%" ></a>
-
+<CENTER>
+<a  target="_blank"   ><img src="images/ok.png"  onClick="login()"  height="20%" width="80%" ></a>
+<a  href="#mainpage"  target="_blank"><img src="images/cancel.png"    height="20%" width="80%" ></a>
+</CENTER>
 </form>
 </div>
 </div>
@@ -869,6 +870,15 @@ window.localStorage.setItem("totalScore", totalLocal);
 function load()
 {
 
+var pw = window.localStorage.getItem("password");
+var a = "";
+if(pw==a){
+$("#regpicture").show();
+}
+else{
+$("#regpicture").hide();
+$("#regpicture").slideUp();
+}
 
 
 var useuse =  document.getElementById('nameuser').innerHTML = window.localStorage.getItem("name");
